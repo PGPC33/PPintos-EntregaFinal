@@ -8,9 +8,11 @@
 </head>
 
 <body>
-    {% for post in posts %}
-    <p>{{post.titulo}}</p>
-    <p> {{post.texto}}</p>
+    {% for usuario in usuarios %}
+    <p>{{usuario.nombre}} {{usuario.apellido}}</p>
+    <p>{{usuario.post_id}}</p>
+
+
     {% endfor %}
 
 </body>
