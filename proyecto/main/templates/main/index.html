@@ -8,11 +8,8 @@
 </head>
 
 <body>
-    {% for post in posts %}
-    <p>{{post.titulo}}</p>
-    <p> {{post.texto}}</p>
-    {% endfor %}
-    <button><a href="{% url 'usuarios:index' %}">Volver</a></button>
+    <h1>Home</h1>
+    <a href="{% url 'usuarios:index' %}">App Usuarios</a>
 
 </body>
 

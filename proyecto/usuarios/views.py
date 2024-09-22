@@ -2,6 +2,10 @@ from django.shortcuts import render
 from .models import Post, Usuario
 
 
+def index(request):
+    return render(request, "usuarios/index.html")
+
+
 def post_list(request):
     posts = Post.objects.all()
     contexto = {"posts": posts}

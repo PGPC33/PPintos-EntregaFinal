@@ -20,5 +20,7 @@ from django.urls import path, include
 
 urlpatterns = [
     path("admin/", admin.site.urls),
+    # Creación de la URL página principal de proyecto
+    path("", include("main.urls")),
     path("usuarios/", include("usuarios.urls")),
 ]

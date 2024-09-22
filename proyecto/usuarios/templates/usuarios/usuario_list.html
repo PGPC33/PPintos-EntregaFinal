@@ -11,9 +11,8 @@
     {% for usuario in usuarios %}
     <p>{{usuario.nombre}} {{usuario.apellido}}</p>
     <p>{{usuario.post_id}}</p>
-
-
     {% endfor %}
+    <button><a href="{% url 'usuarios:index' %}">Volver</a></button>
 
 </body>
 
