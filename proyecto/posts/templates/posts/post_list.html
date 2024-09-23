@@ -8,11 +8,11 @@
 </head>
 
 <body>
-    <h1>Home</h1>
-
-    <button><a href="{% url 'usuarios:index' %}">App Usuarios</a></button>
-    <button><a href="{% url 'posts:index' %}">App Posts</a></button>
-
+    {% for post in posts %}
+    <p>{{post.titulo}}</p>
+    <p> {{post.texto}}</p>
+    {% endfor %}
+    <button><a href="{% url 'usuarios:index' %}">Volver</a></button>
 
 </body>
 
