@@ -23,4 +23,5 @@ urlpatterns = [
     # Creación de la URL página principal de proyecto
     path("", include("main.urls")),
     path("usuarios/", include("usuarios.urls")),
+    path("posts/", include("posts.urls")),
 ]
