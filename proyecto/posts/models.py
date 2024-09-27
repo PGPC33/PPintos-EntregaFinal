@@ -1,14 +1,12 @@
 from django.db import models
 
 
-class Post(models.Model):
-    titulo = models.CharField(max_length=50, unique=True)
-    texto = models.CharField(max_length=500)
-    # img = models.ImageField(upload_to="images/")
+class TemaPost(models.Model):
+    nombre = models.CharField(max_length=50, unique=True)
 
     def __str__(self):
-        return f"{self.titulo}"
+        return f"{self.nombre}"
 
     class Meta:
-        verbose_name = "Categoría"
-        verbose_name_plural = "Categorías"
+        verbose_name: "Tema"
+        verbose_naem_plural: "Temas"

@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from .models import TemaPost
 
 
 # Create your views here.
