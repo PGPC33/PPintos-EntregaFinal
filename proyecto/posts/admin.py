@@ -1,5 +1,5 @@
 from django.contrib import admin
-from .models import TemaPost
+from . import models
 
-
-admin.site.register(TemaPost)
+admin.site.register(models.Post)
+admin.site.register(models.TemaPost)

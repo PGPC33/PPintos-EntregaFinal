@@ -8,11 +8,10 @@
 </head>
 
 <body>
-    {% for post in posts %}
-    <p>{{post.titulo}}</p>
-    <p> {{post.texto}}</p>
+    {% for temapost in temapost %}
+    <p>{{temapost.nombre}}</p>
     {% endfor %}
-    <button><a href="{% url 'usuarios:index' %}">Volver</a></button>
+    <button><a href="{% url 'posts:index' %}">Volver</a></button>
 
 </body>
 
