@@ -1,19 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'main/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block header %}
+Usuarios
+{% endblock header %}
 
-<body>
+{% block main %}
+<div>
     {% for usuario in usuarios %}
-    <p>{{usuario.nombre}} {{usuario.apellido}}</p>
-    <p>{{usuario.post_id}}</p>
+    <p>{{usuario}}</p>
+    {#<p>{{usuario.post_id}}</p>#}
     {% endfor %}
-    <button><a href="{% url 'usuarios:index' %}">Volver</a></button>
-
-</body>
-
-</html>
+</div>
+<button><a href="{% url 'usuarios:index' %}">Volver</a></button>
+{% endblock main %}

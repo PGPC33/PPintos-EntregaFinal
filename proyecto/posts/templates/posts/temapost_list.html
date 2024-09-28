@@ -1,18 +1,15 @@
-<!DOCTYPE html>
-<html lang="en">
+{% extends 'main/base.html' %}
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
+{% block header %}
+Temas de publicaciones
+{% endblock header %}
 
-<body>
+{% block main %}
+<div>
     {% for temapost in temapost %}
-    <p>{{temapost.nombre}}</p>
+    <p>{{temapost}}</p>
+
     {% endfor %}
-    <button><a href="{% url 'posts:index' %}">Volver</a></button>
-
-</body>
-
-</html>
+</div>
+<button><a href="{% url 'posts:index' %}">Volver</a></button>
+{% endblock main %}
