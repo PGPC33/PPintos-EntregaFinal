@@ -12,11 +12,13 @@ Temas
 </form>
 
 <div>
+    <ul style="list-style-type: none;"></ul>
     {% for temapost in temapost %}
-    <p>{{temapost}}</p>
+    <li>{{temapost}}</li>   
     {%empty%}
     <p>No hay registros</p>
     {% endfor %}
+    </ul>
 </div>
 <p>
     <button><a href="{% url 'posts:index' %}">Volver</a></button>

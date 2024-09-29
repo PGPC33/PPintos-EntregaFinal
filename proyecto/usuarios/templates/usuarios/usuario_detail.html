@@ -1,0 +1,18 @@
+{% extends 'main/base.html' %}
+
+{% block header %}
+Información de usuario
+{% endblock header %}
+
+{% block main %}
+<ul style="list-style-type: none;">
+    <li>Nombre:{{usuario.nombre}}</li>
+    <li>Apellido: {{usuario.apellido}}</li>
+    <li>Usuario: {{usuario.user}}</li>
+    <li>Contraseña:{{usuario.password}}</li>
+</ul>
+<p>
+    <button><a href="{% url 'usuarios:usuario_list' %}">Volver</a></button>
+</p>
+
+{% endblock main %}

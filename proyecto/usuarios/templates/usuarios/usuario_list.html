@@ -7,9 +7,17 @@ Usuarios
 {% block main %}
 
 <div>
-    {% for usuario in usuarios %}
-    <p>{{usuario}}</p>    
-    {% endfor %}
+    <ul style="list-style-type: none;">
+        {% for usuario in usuarios %}
+        <li>{{usuario}}
+            <button>
+                <a href="{% url 'usuarios:usuario_detail' usuario.id %}">Detalle</a>
+            </button>
+        </li>
+        {% empty %}
+        <p>Sin información disponible</p>
+        {% endfor %}
+    </ul>
 </div>
 <p>
     <button><a href="{% url 'usuarios:index' %}">Volver</a></button>

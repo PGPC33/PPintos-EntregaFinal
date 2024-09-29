@@ -23,3 +23,9 @@ def usuario_create(request):
             return redirect("usuarios:usuario_list")
     return render(request, "usuarios/usuario_create.html", {"form": form})
     """Se elimina la variable contexto"""
+
+
+def usuario_detail(request, pk: int):
+    query = Usuario.objects.get(id=pk)
+    context = {"usuario": query}
+    return render(request, "usuarios/usuario_detail.html", context)
