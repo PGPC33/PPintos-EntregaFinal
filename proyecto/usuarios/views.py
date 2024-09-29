@@ -1,4 +1,4 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 from .forms import UsuarioForm
 from .models import Usuario
 
@@ -16,10 +16,11 @@ def usuario_list(request):
 def usuario_create(request):
     if request.method == "GET":
         form = UsuarioForm()
-        
+
     if request.method == "POST":
         form = UsuarioForm(request.POST)
         if form.is_valid():
             form.save()
+            return redirect("usuarios:usuario_list")
     return render(request, "usuarios/usuario_create.html", {"form": form})
     """Se elimina la variable contexto"""

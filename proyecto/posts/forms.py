@@ -16,10 +16,20 @@ class TemaPostForm(forms.ModelForm):
                 raise ValidationError(
                     "El nombre del tema no puede ser menor a tres caracteres o máximo 50"
                 )
-            return nombre
+        return nombre
 
 
 class PostForm(forms.ModelForm):
     class Meta:
         model = Post
         fields = ["titulo", "texto"]
+
+    def clean_nombre(self):
+        titulo: str = self.cleaned_data.get("titulo", "")
+        if not titulo.isalpha():
+            raise ValidationError("El titulo del post no puede contener números")
+            if len(nombre) < 3 or len(nombre) > 50:
+                raise ValidationError(
+                    "El título del post no puede ser menor a tres caracteres o máximo de 50"
+                )
+        return titulo

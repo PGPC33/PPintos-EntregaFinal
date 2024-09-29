@@ -41,6 +41,6 @@ def post_create(request):
         form = PostForm(request.POST)
         if form.is_valid():
             form.save()
-            return redirect("posts:posts_list")
+            return redirect("posts:post_list")
     return render(request, "posts/post_create.html", {"form": form})
     """Se elimina la variable contexto"""
