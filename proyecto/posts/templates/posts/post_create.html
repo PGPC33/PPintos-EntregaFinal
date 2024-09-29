@@ -1,14 +1,18 @@
 {% extends 'main/base.html' %}
 
 {% block header %}
-Post
+Nuevo post
 {% endblock header %}
 
 {% block main %}
-<div>
-    {% for post in posts %}
-    <p>{{post}}</p>
-    {% endfor %}
-</div>
+<form method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit">Enviar</button>
+
+
+</form>
+
+
 <button><a href="{% url 'posts:index' %}">Volver</a></button>
 {% endblock main %}
