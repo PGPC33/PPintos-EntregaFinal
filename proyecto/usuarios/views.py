@@ -16,7 +16,6 @@ def usuario_list(request):
 def usuario_create(request):
     if request.method == "GET":
         form = UsuarioForm()
-
     if request.method == "POST":
         form = UsuarioForm(request.POST)
         if form.is_valid():

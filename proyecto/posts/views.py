@@ -14,8 +14,15 @@ def post_list(request):
     return render(request, "posts/post_list.html", contexto)
 
 
+"""búsqueda"""
+
+
 def temapost_list(request):
-    temapost = TemaPost.objects.all()
+    query = request.GET.get("query", "")
+    if query:
+        temapost = TemaPost.objects.filter(nombre__icontains=query)
+    else:
+        temapost = TemaPost.objects.all()
     contexto = {"temapost": temapost}
     return render(request, "posts/temapost_list.html", contexto)
 

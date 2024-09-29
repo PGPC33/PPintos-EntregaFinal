@@ -5,12 +5,20 @@ Agregar usuario
 {% endblock header %}
 
 {% block main %}
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
-    <button type="submit">Enviar</button>
-</form>
 
+<div>
+    <form method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <p>
+            <button type="submit">Enviar</button>
+        </p>
 
-<button><a href="{% url 'usuarios:index' %}">Volver</a></button>
+    </form>
+
+</div>
+
+<p>
+    <button><a href="{% url 'usuarios:index' %}">Volver</a></button>
+</p>
 {% endblock main %}

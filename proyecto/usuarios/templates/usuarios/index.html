@@ -5,6 +5,9 @@ Usuarios
 {% endblock header %}
 
 {% block main %}
-<button><a href="{% url 'usuarios:usuario_list'%}">Listar usuarios</a></button>
-<button><a href="{% url 'usuarios:usuario_create'%}">Agregar usuario</a></button>
+<div>
+    <button><a href="{% url 'usuarios:usuario_list'%}">Listar usuarios</a></button>
+    <button><a href="{% url 'usuarios:usuario_create'%}">Agregar usuario</a></button>
+</div>
+
 {% endblock main %}

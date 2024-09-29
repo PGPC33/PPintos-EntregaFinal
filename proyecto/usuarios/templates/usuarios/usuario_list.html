@@ -5,11 +5,14 @@ Usuarios
 {% endblock header %}
 
 {% block main %}
+
 <div>
     {% for usuario in usuarios %}
-    <p>{{usuario}}</p>
-    {#<p>{{usuario.post_id}}</p>#}
+    <p>{{usuario}}</p>    
     {% endfor %}
 </div>
-<button><a href="{% url 'usuarios:index' %}">Volver</a></button>
+<p>
+    <button><a href="{% url 'usuarios:index' %}">Volver</a></button>
+</p>
+
 {% endblock main %}

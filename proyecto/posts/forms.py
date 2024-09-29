@@ -28,8 +28,8 @@ class PostForm(forms.ModelForm):
         titulo: str = self.cleaned_data.get("titulo", "")
         if not titulo.isalpha():
             raise ValidationError("El titulo del post no puede contener números")
-            if len(nombre) < 3 or len(nombre) > 50:
+            if len(nombre) > 50:
                 raise ValidationError(
-                    "El título del post no puede ser menor a tres caracteres o máximo de 50"
+                    "El título del post no puede contener más de 50 caracteres"
                 )
         return titulo

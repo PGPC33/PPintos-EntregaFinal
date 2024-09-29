@@ -5,7 +5,11 @@ Posts
 {% endblock header %}
 
 {% block main %}
-<button><a href="{% url 'posts:temapost_list' %}">Listar temas</a></button>
-<button><a href="{% url 'posts:temapost_create' %}">Agregar tema</a></button>
-<button><a href="{% url 'posts:post_create' %}">Nuevo post</a></button>
+<div>
+    <button><a href="{% url 'posts:temapost_list' %}">Listar temas</a></button>
+    <button><a href="{% url 'posts:temapost_create' %}">Agregar tema</a></button>
+    <button><a href="{% url 'posts:post_create' %}">Nuevo post</a></button>
+</div>
+
+
 {% endblock main %}

@@ -5,11 +5,21 @@ Temas
 {% endblock header %}
 
 {% block main %}
+<form action="{% url 'posts:temapost_list' %}" method="get">
+    <input type="text" name="query" placeholder="Buscar tema">
+    <button type="submit">Buscar</button>
+
+</form>
+
 <div>
     {% for temapost in temapost %}
     <p>{{temapost}}</p>
-
+    {%empty%}
+    <p>No hay registros</p>
     {% endfor %}
 </div>
-<button><a href="{% url 'posts:index' %}">Volver</a></button>
+<p>
+    <button><a href="{% url 'posts:index' %}">Volver</a></button>
+</p>
+
 {% endblock main %}

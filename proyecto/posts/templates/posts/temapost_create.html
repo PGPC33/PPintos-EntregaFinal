@@ -5,11 +5,20 @@ Agregar nuevo tema
 {% endblock header %}
 
 {% block main %}
-<form method="post">
-    {% csrf_token %}
-    {{form.as_p}}
+<p>
+<form method="post"></form>
+{% csrf_token %}
+{{form.as_p}}
+<p>
     <button type="submit">Enviar</button>
-</form>
+</p>
 
-<button><a href="{% url 'posts:index' %}">Volver</a></button>
+</form>
+</p>
+<p>
+    <button><a href="{% url 'posts:index' %}">Volver</a></button>
+</p>
+
+
+
 {% endblock main %}
