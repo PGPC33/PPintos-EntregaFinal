@@ -10,20 +10,19 @@ Usuarios
     <ul style="list-style-type: none;">
         {% for usuario in usuarios %}
         <li>{{usuario}}
-            <button>
+            <button style="width: 60px; height: 20px;">
                 <a href="{% url 'usuarios:usuario_detail' usuario.id %}">Detalle</a>
             </button>
-            <button>
-                <a href="{% url 'usuarios:usuario_update' usuario.id %}">Modificar</a>
+            <button style="width: 60px; height: 20px;">
+                <a href="{% url 'usuarios:usuario_update' usuario.id %}">Editar</a>
             </button>
+            <button style="width: 60px; height: 20px;"> <a
+                    href="{% url 'usuarios:usuario_delete' usuario.id %}">Eliminar</a></button>
         </li>
         {% empty %}
         <p>Sin información disponible</p>
         {% endfor %}
     </ul>
 </div>
-<p>
-    <button><a href="{% url 'usuarios:index' %}">Volver</a></button>
-</p>
-
+<p><button><a href="{% url 'usuarios:index' %}">Volver</a></button></p>
 {% endblock main %}

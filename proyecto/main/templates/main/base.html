@@ -16,12 +16,15 @@
     </header>
 
     <main>
-        <p>
-            {% include 'main/componentes/navbar.html' %}
-        </p>
+        <div>
+            <p>
+                {% include 'main/componentes/navbar.html' %}
+            </p>
 
-        {% block main %}
-        {% endblock main %}
+            {% block main %}
+            {% endblock main %}
+        </div>
+
     </main>
 
     <footer>

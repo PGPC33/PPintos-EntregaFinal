@@ -42,3 +42,12 @@ def usuario_update(request, pk: int):
             form.save()
             return redirect("usuarios:usuario_list")
     return render(request, "usuarios/usuario_create.html", {"form": form})
+
+
+def usuario_delete(request, pk: int):
+    query = Usuario.objects.get(id=pk)
+    context = {"usuario": query}
+    if request.method == "POST":
+        query.delete()
+        return redirect("usuarios:usuario_list")
+    return render(request, "usuarios/usuario_confirm_delete.html", context)
