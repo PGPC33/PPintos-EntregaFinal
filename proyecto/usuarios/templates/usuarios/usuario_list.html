@@ -13,6 +13,9 @@ Usuarios
             <button>
                 <a href="{% url 'usuarios:usuario_detail' usuario.id %}">Detalle</a>
             </button>
+            <button>
+                <a href="{% url 'usuarios:usuario_update' usuario.id %}">Modificar</a>
+            </button>
         </li>
         {% empty %}
         <p>Sin información disponible</p>
