@@ -1,9 +1,15 @@
 from django.shortcuts import render, redirect
+from django.views.generic import (
+    ListView,
+    CreateView,
+    DeleteView,
+    DetailView,
+    UpdateView,
+)
 from .forms import TemaPostForm, PostForm
 from .models import Post, TemaPost
 
 
-# Create your views here.
 def index(request):
     return render(request, "posts/index.html")
 
@@ -14,9 +20,7 @@ def post_list(request):
     return render(request, "posts/post_list.html", contexto)
 
 
-"""búsqueda"""
-
-
+# List
 def temapost_list(request):
     query = request.GET.get("query", "")
     if query:
@@ -27,6 +31,21 @@ def temapost_list(request):
     return render(request, "posts/temapost_list.html", contexto)
 
 
+class TemaPostList(ListView):
+    model = TemaPost
+    # template_name = "posts/temapost_list.html"
+    # context_object_name = "temapost"
+    queryset = TemaPost.objects.all()
+
+    def get_queryset(self):
+        queryset = super().get_queryset()
+        q = request.GET.GET("q")
+        if q:
+            queryset = TemaPost.objects.filter(nombre__icontains=q)
+            return queryset
+
+
+# Create
 def temapost_create(request):
     if request.method == "GET":
         form = TemaPostForm()
@@ -40,6 +59,7 @@ def temapost_create(request):
     """Se elimina la variable contexto"""
 
 
+# Create
 def post_create(request):
     if request.method == "GET":
         form = PostForm()

@@ -1,0 +1,10 @@
+{% extends 'main/base.html' %}
+
+{% block header %}
+Logout
+{% endblock header %}
+
+{% block main %}
+<p><b>Sesión finalizada</b></p>
+<button type="submit"><a href="{% url 'main:index' %}">Ok</a></button>
+{% endblock main %}

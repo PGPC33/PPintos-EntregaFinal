@@ -7,9 +7,10 @@ Post
 {% block main %}
 
 <div>
-{% for post in posts %}
-<p>{{post}}</p>
-{% endfor %}
+    {% for post in posts %}
+    <p><b>{{post.titulo}}</b></p>
+    <p>{{post.texto}}</p>
+    {% endfor %}
 </div>
 
 <p>

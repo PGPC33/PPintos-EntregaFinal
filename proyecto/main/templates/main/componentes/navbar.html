@@ -1,5 +1,16 @@
-<navbar style="display: flex; justify-content: center;">
-    <button><a href="{% url 'main:index' %}">Home</a></button>
+<navbar style="display: flex; justify-content: center; margin-bottom: 2%; gap: 1%;">
+    {% if user.is_authenticated %}{#Propiedad#}
     <button><a href="{% url 'usuarios:index' %}">Usuarios</a></button>
     <button><a href="{% url 'posts:index' %}">Posts</a></button>
+    <button><a href="{% url 'main:index' %}">Home</a></button>
+    <form action="{% url 'main:logout' %}" method="post">
+        {% csrf_token %}
+        <button type="submit">Logout</button>
+    </form>
+    <p><b><a href="#">{{user.username}}</a></b></p>
+    {% else %}
+    <div>
+        <button style="display: flex; justify-content: flex-end; width: 100%;">
+            <a href="{% url 'main:login' %}">Login</a></button>    </div>
+    {% endif %}
 </navbar>

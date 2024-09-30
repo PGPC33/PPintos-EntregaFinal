@@ -13,17 +13,19 @@
             {% block header %}
             {% endblock header %}
         </h1>
-    </header>
-
-    <main>
         <div>
             <p>
                 {% include 'main/componentes/navbar.html' %}
             </p>
-
-            {% block main %}
-            {% endblock main %}
         </div>
+    </header>
+
+    <main>
+
+
+        {% block main %}
+        {% endblock main %}
+
 
     </main>
 

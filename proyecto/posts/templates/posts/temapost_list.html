@@ -12,12 +12,12 @@ Temas
 </form>
 
 <div>
-    <ul style="list-style-type: none;"></ul>
-    {% for temapost in temapost %}
-    <li>{{temapost}}</li>   
-    {%empty%}
-    <p>No hay registros</p>
-    {% endfor %}
+    <ul style="list-style-type: none;">
+        {% for temapost in temapost%}
+        <li>{{temapost}}</li>
+        {%empty%}
+        <p>No hay registros</p>
+        {% endfor %}
     </ul>
 </div>
 <p>
