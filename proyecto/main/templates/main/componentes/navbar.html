@@ -10,12 +10,6 @@
         <button type="submit">Logout</button>
     </form>
     <p><b><a href="#">{{user.username}}</a></b></p>
-
-    {% else %}
-
-    <button><a href="{% url 'main:login' %}">Login</a></button>
-
-
     {% endif %}
 
 </navbar>

@@ -127,5 +127,6 @@ STATIC_URL = "static/"
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 # Configuración de autenticación
-LOGIN_URL = reverse_lazy("main:login")# URL de la página de inicio de sesión
-LOGIN_REDIRECT_URL = reverse_lazy("main:index") #URL a la que se redirige luego del inicio de sesion exioso
+LOGIN_URL = reverse_lazy("main:login")  # URL de la página de inicio de sesión
+# URL a la que se redirige luego del inicio de sesion exitoso
+LOGIN_REDIRECT_URL = reverse_lazy("main:index")

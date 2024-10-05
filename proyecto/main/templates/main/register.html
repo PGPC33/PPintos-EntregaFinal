@@ -1,7 +1,7 @@
 {% extends 'main/base.html' %}
 
 {% block header %}
-Login
+Nueva cuenta
 {% endblock header %}
 
 {% block main %}
@@ -11,9 +11,7 @@ Login
     <table>
         {{form.as_table}}
     </table>
-    <p style="text-align: center;"><button type="submit">Iniciar sesión</button></p>
+    <button type="submit">Registrarse</button>
+
 </form>
-<p>
-    <b>¿No tienes cuenta?</b> <a href="{% url 'main:register' %}">Registrase aquí</a>
-</p>
 {% endblock main %}
