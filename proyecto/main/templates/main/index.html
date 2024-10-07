@@ -1,8 +1,12 @@
 {% extends 'main/base.html' %}
 
 {% block header %}
+
 Blog
+{% if not user.is_authenticated %}
 <p style="text-align: center; position:fixed;"><button><a href="{% url 'main:login' %}">Login</a></button></p>
+{% endif %}
+
 {% endblock header %}
 
 

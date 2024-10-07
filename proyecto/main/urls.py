@@ -9,5 +9,9 @@ urlpatterns = [
     path("", views.index, name="index"),
     path("login", LoginView.as_view(template_name="main/login.html"), name="login"),
     path("logout", LogoutView.as_view(template_name="main/logout.html"), name="logout"),
-    path("register", views.Register.as_view(), name="register"),
+    path(
+        "register",
+        views.Register.as_view(template_name="main/register.html"),
+        name="register",
+    ),
 ]

@@ -1,4 +1,6 @@
 from django.shortcuts import render, redirect
+
+# from django.contrib.auth.decorators import login_required
 from .forms import UsuarioForm
 from .models import Usuario
 
@@ -7,6 +9,7 @@ def index(request):
     return render(request, "usuarios/index.html")
 
 
+# @login_required
 def usuario_list(request):
     usuarios = Usuario.objects.all()
     contexto = {"usuarios": usuarios}

@@ -1,4 +1,7 @@
+from django.contrib.auth.mixins import LoginRequiredMixin
 from django.shortcuts import render, redirect
+from django.urls import reverse_lazy
+
 from django.views.generic import (
     ListView,
     CreateView,
@@ -20,7 +23,6 @@ def post_list(request):
     return render(request, "posts/post_list.html", contexto)
 
 
-# List
 def temapost_list(request):
     query = request.GET.get("query", "")
     if query:

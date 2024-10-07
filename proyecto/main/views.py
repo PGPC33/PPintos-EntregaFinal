@@ -11,4 +11,4 @@ def index(request):
 class Register(CreateView):
     form_class = CustomUserCreationForm
     template_name = "main/register.html"
-    success_url = reverse_lazy("main: login")
+    success_url = reverse_lazy("main:login")
